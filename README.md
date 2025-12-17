@@ -34,3 +34,6 @@ When breaking this license, you are no longer allowed to use DihSwitcher.
 Breaking the license automatically acts as a cease and desist notice.  
 We will take legal action and take down violating  
 material and strike publishers.
+
+## Support
+If you need any help regarding DihSwitcher, create a post in the **help** channel of [ClientCentral](https://client-central-1200866946351116358).
