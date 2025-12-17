@@ -2,7 +2,7 @@
 DihSwitcher is a super lightweight open-source version-switcher for M:BE.
 
 ## How to use
-Soon:tm:
+Soon™
 
 ## Licence
 You are NOT allowed to post DihSwitcher anywhere. If you want  
