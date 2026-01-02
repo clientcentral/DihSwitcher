@@ -38,4 +38,4 @@ material and strike publishers.
 ## Support
 If you need any help regarding DihSwitcher, create a post in the **help** channel of [ClientCentral](https://client-central-1200866946351116358).
 
-[![Image of "Spaghetti code" definiton]https://files.catbox.moe/caopww.png]
+![Image of "Spaghetti code" definiton](https://files.catbox.moe/caopww.png)
