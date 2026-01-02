@@ -38,6 +38,4 @@ material and strike publishers.
 ## Support
 If you need any help regarding DihSwitcher, create a post in the **help** channel of [ClientCentral](https://client-central-1200866946351116358).
 
-## Ignore everything in this readme below I'm js testing stuff rn e
-[![Home](https://img.shields.io/badge/123-456-blue)](#) 
-[![Support](https://img.shields.io/badge/Support-Online-green)](#support-link)
+[![Image of "Spaghetti code" definiton]https://files.catbox.moe/caopww.png]
