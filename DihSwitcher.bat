@@ -18,9 +18,10 @@
 ::
 
 
+:actualstart
 @echo off
 chcp 65001 >nul
-title DihSwitcher ^| Made by ClientCentral
+title DihSwitcher v1.1.0 ^| Made by ClientCentral
 set dihdir=%userprofile%\Documents\DihSwitcher
 set lct=false
 
@@ -86,11 +87,10 @@ echo     You are not allowed to claim that you own DihSwitcher, are a
 echo     developer or staff of DihSwitcher, or have any right to
 echo     DihSwitcher. or claim things about the DihSwitcher software
 echo     that are not true. Apfel is not responsible for harm done to
-echo     the device or user that may be caused by bugs or unintended user
-echo     behavior such as saving important files in DihSwitcher's saving
-echo     directory and then using DihSwitcher's uninstaller. This license
-echo     can change at any time, and the license shown here may be outdated
-echo     at any time. You can check the updated license in the official
+echo     the device or user that maybe caused by bugs, unindented
+echo     user behaviour, or other. This license can change at any time
+echo     and the license shown here may be outdated at any time.
+echo     You can check the updated license in the official
 echo     sources that are stated above; you automatically agree with all
 echo     changes to this license, even when not seeing them. It's up
 echo     to you to stay updated about the license. You are not allowed
@@ -141,7 +141,8 @@ echo [2] Delete version
 echo [3] Open directory
 echo [4] Read licence
 echo [5] Uninstall DihSwitcher
-echo [6] Exit 
+echo [6] Support
+echo [7] Exit 
 
 set /p option=^>
 if "%option%" EQU "1" (
@@ -157,6 +158,8 @@ if "%option%" EQU "1" (
 ) else if "%option%" EQU "5" (
     goto uninstall
 ) else if "%option%" EQU "6" (
+    goto support
+) else if "%option%" EQU "7" (
     exit
 ) else if "%option%" EQU "r" (
     start "" "%~f0"
@@ -171,6 +174,9 @@ echo   ___  _ _    ___        _ _      _
 echo  ^|   \(_) ^|_ / __^|_ __ _(_) ^|_ __^| ^|_  ___ _ _ 
 echo  ^| ^|) ^| ^| ' \\__ \ V  V / ^|  _/ _^| ' \/ -_) '_^|
 echo  ^|___/^|_^|_^|^|_^|___/\_/\_/^|_^|\__\__^|_^|^|_\___^|_^|  
+echo.
+echo (!) WARNING: Switching versions will reset Minecraft deleting all worlds.
+echo              Make sure to backup important files.
 echo.
 echo What version do you want to switch to?
 set /p whatver=^>
@@ -201,6 +207,8 @@ if exist "%dihdir%\%whatver%.appx" (
     echo ^| 3. Press on the ENTER key or click Open
     echo ^|
     echo ^|    Press any key to return to main menu!
+    echo.
+    echo If something didn't work, navigate to the Support option in the main menu.
     pause>nul
     goto start
 ) else (
@@ -229,6 +237,9 @@ if %response% EQU 200 (
     echo ^| 3. Press on the ENTER key or click Open
     echo ^|
     echo ^|    Press any key to return to main menu!
+    echo.
+    echo If something didn't work, navigate to the Support option in the main menu.
+    pause > nul
     goto start
 ) else if  %response% EQU 404 (
     goto check2
@@ -261,6 +272,8 @@ if %response% EQU 200 (
     echo ^| 4. Search for "Minecraft" and press enter
     echo ^|
     echo ^|    Press any key to return to main menu!
+    echo.
+    echo If something didn't work, navigate to the Support option in the main menu.
     pause >nul
     goto start
 ) else if  %response% EQU 404 (
@@ -277,6 +290,8 @@ if %response% EQU 200 (
     echo ^|    also not supported.
     echo ^|
     echo ^|    Press any key to return to main menu!
+    echo.
+    echo If something didn't work, navigate to the Support option in the main menu.
     pause>nul
     goto start
 ) else (
@@ -355,7 +370,7 @@ echo  ^| ^|) ^| ^| ' \\__ \ V  V / ^|  _/ _^| ' \/ -_) '_^|
 echo  ^|___/^|_^|_^|^|_^|___/\_/\_/^|_^|\__\__^|_^|^|_\___^|_^|  
 echo.
 echo Are you sure you want to uninstalll DihSwitcher? ( Y / N )
-set /p uninstallyn=
+set /p uninstallyn=^>
 if %uninstallyn% EQU Y (
     rd /s /q "%dihdir%"
     echo MsgBox "DihSwitcher has been uninstalled!",64 + 0,"DihSwitcher" > "%temp%\dihswitcher.uninstalled.vbs"
@@ -385,3 +400,44 @@ set lct=false
 echo Press any key to go back to main menu!
 pause>nul
 goto start
+
+
+:support
+echo If something didn't work as intended, try:
+echo 1. Closing Minecraft if it is open
+echo 2. Adding DihSwitcher an an exception to your AntiVirus
+echo 3. Uninstalling Minecraft before installing new version
+echo.
+echo If this didn't help, you got any questions related to DihSwitcher,
+echo you need further support, or you want to contact Apfel, press type Y,
+echo If you want to return to main menu, type N.
+set /p support=^>
+if "%support%" EQU "Y" (
+    start https://dsc.gg/clnt
+    goto start
+) else if "%support%" EQU "y" (
+    start https://dsc.gg/clnt
+    goto start
+) else (
+    goto start
+)
+
+
+
+
+
+
+
+
+:error
+cls
+color 4
+echo   ___  _ _    ___        _ _      _            
+echo  ^|   \(_) ^|_ / __^|_ __ _(_) ^|_ __^| ^|_  ___ _ _ 
+echo  ^| ^|) ^| ^| ' \\__ \ V  V / ^|  _/ _^| ' \/ -_) '_^|
+echo  ^|___/^|_^|_^|^|_^|___/\_/\_/^|_^|\__\__^|_^|^|_\___^|_^|  
+echo.
+echo Something went wrong. Restarting in 5 Seconds...
+timeout /t 5 >nul
+start "" "%~f0"
+exit
