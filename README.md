@@ -31,6 +31,9 @@ to sell DihSwitcher or demand any money / action for people to
 obtain the source. You are not allowed to use DihSwitcher to cause
 any harm towards any person or entity.
 
+( Distribution of this software on 9minecraft.net or associated mirrors is strictly prohibited )
+
+
 When breaking this license, you are no longer allowed to use DihSwitcher.  
 Breaking the license automatically acts as a cease and desist notice.  
 We will take legal action and take down violating  
