@@ -98,6 +98,8 @@ echo     to sell DihSwitcher or demand any money / action for people to
 echo     obtain the source. You are not allowed to use DihSwitcher to cause
 echo     any harm towards any person or entity. 
 echo.
+echo    ( Distribution of this software on 9minecraft.net or associated mirrors is strictly prohibited )
+echo.
 echo     When breaking this license, you are no longer allowed to use DihSwitcher.
 echo     Breaking the license automatically acts as a cease and desist notice.
 echo     We will take legal action and take down violating
